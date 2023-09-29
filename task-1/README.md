@@ -1,20 +1,20 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Вывод среднего возраста по всей технике и 50% самой старой.
 
 ## Description
 
-[Describe what you have done]
+1. В тз не уточняется, какая оценка среднего интересует, поэтому было расчитана медиана (50% квантиль) и среднее арфимитическое.
+2. Класс AgriculturalMachinery дает возможность использовать либо hashCode для составления мапы, либо переопределенный оператор сравнения для составления сета.
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+dart surf_dart_courses_template.dar
 
 ## Problems
 
-[Describe the problems you encountered]
+нет
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
 
