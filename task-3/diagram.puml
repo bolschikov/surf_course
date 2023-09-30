@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+GameObject <|-- Player
+GameObject <|-- Enemy
+GameObject -right-> Position2D
+ControlManagment <|.. Player
+
+abstract class GameObject {
+    +name
+    +pos2D
+    -movementShift
+    -speed
+    -color
+    +GameObject(name: String, pos2D: Position2D)
+    +setColor()
+    +toString()
+    +show()
+}
+
+interface ControlManagment{
+    +moveForward()
+    +moveBack()
+}
+
+class Player {
+    +Player(name: String)
+    +moveForward()
+    +moveBack()
+    +show()
+}
+
+class Position2D{
+    +x
+    +y
+    +Position2D(x: double, y: double)
+}
+
+class Enemy {
+    +maxXPos
+    -count
+    +Enemy(name: String, pos: Position2D)
+    +Enemy.fastRandomSpawn()
+    +getAllAmountOfEnemies()
+    +show()
+}
+
+
+@enduml
