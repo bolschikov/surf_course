@@ -1,6 +1,6 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Благодоря if, while, switch добрался до работы 
 
 ## Description
 
