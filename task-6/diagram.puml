@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+Human <|-- Player
+Human <|-- Coach
+PlayerPosition <-right Player
+
+abstract class Human {
+    +name
+    +age
+    +Human(name: String, age: int)
+}
+
+enum PlayerPosition{
+    GUARD
+    FORWARD
+}
+
+class Player {
+    +position
+    +shots
+    +blocks
+    -shotCoef
+    -blockCoef
+    +Player(name: String, age: int, position: PlayerPosition)
+    +Player.guard(name: String, age: int)
+    +Player.forward(name: String, age: int)
+    +double getKPI()
+    +toString()
+    -initCoef()
+}
+
+class Coach {
+    +cups
+    +lvl
+    +Coach(name: String, age: int)
+}
+
+
+@enduml
