@@ -54,12 +54,12 @@ class FilterAmountLessThan implements Filter<int>{
   int item;
 
   FilterAmountLessThan(this.item);
-  
+
   @override
   bool apply(Product product) => product.amount < item;
 }
 
-List<Product?> applyFilter<T>(List<Product> products, Filter filter){
+List<Product?> applyFilter(List<Product> products, Filter filter){
   return products.where((p) => filter.apply(p)).toList();
 }
 
