@@ -1,10 +1,10 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Применение 3х видов фильтраций к списку продуктов
 
 ## Description
 
-[Describe what you have done]
+Абстрактный шаблон фильтрации позволил красиво решить задачу
 
 ## How to
 
