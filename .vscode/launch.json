@@ -5,29 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "task9",
-            "cwd": "task9",
+            "name": "task10",
+            "cwd": "task10",
             "request": "launch",
             "type": "dart",
-            "program": "${workspaceFolder}/task9/lib/main.dart",
+            "program": "${workspaceFolder}/task10/lib/main.dart",
             "args": [
                 "-d",
                 "chrome"
             ]
         },
-        {
-            "name": "task-9 (profile mode)",
-            "cwd": "task-9",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "task-9 (release mode)",
-            "cwd": "task-9",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
     ]
 }
