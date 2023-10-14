@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int addCounter = 0;
   int rmvCounter = 0;
   int cntr = 0;
-  _increment(){
+  void _increment(){
     setState(() {
       addCounter++;
       cntr++;
@@ -53,9 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final Color appBarColor = Theme.of(context).colorScheme.inversePrimary;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: appBarColor,
         title: Text(widget.title),
       ),
       body: Center(
