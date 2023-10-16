@@ -29,9 +29,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  MaterialColor color = Colors.yellow;
+  var color = Colors.yellow;
   double posX = 10;
-  double side = 100;
+  double posY = 10;
+  final double side = 100;
 
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 2),
@@ -48,15 +49,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  Widget makeMyWidget(MaterialColor color){
-    return AnimatedContainer(
-      duration: const Duration(seconds: 1),
-      curve: Curves.fastOutSlowIn,
-      width: side,  
-      height: side,
-      color: color,
-    );
-  }
+  get curColor => color == Colors.yellow ? Colors.green : Colors.yellow;
 
   @override
   Widget build(BuildContext context) {
@@ -70,27 +63,54 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         alignment: Alignment.center,
         children: [
           AnimatedPositioned(
-            top: MediaQuery.of(context).size.height / 2 - side / 2,  
+            top: posY,  
             left: posX,
             duration: const Duration(seconds: 1),
             curve: Curves.fastOutSlowIn,    
-            child: RotationTransition(turns: _animation, child: makeMyWidget(color)),
+            child: RotationTransition(
+              turns: _animation,
+              child: MyAnimatedContainer(color: color, side: side)),
           ),
           Positioned.fill(
             child: GestureDetector(
               onTap: () {
-                setState(() => color = color == Colors.yellow ? Colors.green : Colors.yellow);
+                setState(() => color = curColor);
               },
               onLongPress: () {
-                setState(() => _controller.forward(from: 0.0));
+                setState(() => _controller.repeat());
+              },
+              onLongPressUp: () {
+                setState(() => _controller.reset());
               },
               onHorizontalDragUpdate: (details){
                 setState(() => posX = posX + details.delta.dx);
               },
+              onVerticalDragUpdate: (details){
+                setState(() => posY = posY + details.delta.dy);
+              }
+              
             )
           ) 
         ],
       ),
     );
   }
+}
+
+class MyAnimatedContainer extends StatelessWidget{
+  final double side;
+  final MaterialColor color;
+  MyAnimatedContainer({required this.side, required this.color});
+  
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: const Duration(seconds: 1),
+      curve: Curves.fastOutSlowIn,
+      width: side,  
+      height: side,
+      color: color,
+    );
+  }
+
 }
