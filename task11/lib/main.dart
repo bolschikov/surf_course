@@ -224,11 +224,13 @@ class CustomCard extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 35),
-              Text(info,
-                style: TextStyle( 
-                  color: TestAppColors.textAboutMe,
-                  fontSize: 15,
-                ),
+              Expanded(child: 
+                Text(info,
+                  style: TextStyle( 
+                    color: TestAppColors.textAboutMe,
+                    fontSize: 15,
+                  ),
+                )
               )
             ]
           )
