@@ -1,10 +1,10 @@
 # Description of your result
 
-Визитка с применением различных видов assets. Результат исполнения программы представлен в result.png
+You can describe your results in any language that is convenient for you, not just English.
 
 ## Description
 
-Использованы 4 вида шрифтов, 3 svg, 1 jpg
+[Describe what you have done]
 
 ## How to
 
