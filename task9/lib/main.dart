@@ -33,21 +33,21 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   int addCounter = 0;
-  int rmvCounter = 0;
-  int cntr = 0;
+  int removeCounter = 0;
+  int counter = 0;
   void _increment(){
     setState(() {
       addCounter++;
-      cntr++;
+      counter++;
     });
   }
 
-  _decrement(){
-    if(cntr > 0) {
-      cntr--;
+  void _decrement(){
+    if(counter > 0) {
+      counter--;
     }
     setState(() {
-      rmvCounter++;
+      removeCounter++;
     });
   }
 
@@ -75,12 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  '$cntr', 
+                  '$counter', 
                   style: Theme.of(context).textTheme.headlineMedium
                 ),
                 SizedBox(width: 10),
                 Text(
-                  ' $rmvCounter',
+                  ' $removeCounter',
                   style: Theme.of(context).textTheme.headlineSmall
                 ), 
               ],
